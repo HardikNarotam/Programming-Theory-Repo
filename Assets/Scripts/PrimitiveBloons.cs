@@ -18,7 +18,7 @@ public class PrimitiveBloons : MonoBehaviour
         FollowPath();
     }
 
-    protected void FollowPath()
+    protected void FollowPath() // ABSTRACTION
     {
         Transform target = path.wayPoints[currentWayPoint];
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);

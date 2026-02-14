@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class TringleBloon : PrimitiveBloons
+public class TringleBloon : PrimitiveBloons // INHERITANCE
 {
-    public override void Start()
+    public override void Start() // POLYMORPHISM
     {
         base.Start();
         speed = 1f;

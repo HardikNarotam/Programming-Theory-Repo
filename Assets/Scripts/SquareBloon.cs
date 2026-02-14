@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class SquareBloon : PrimitiveBloons
+public class SquareBloon : PrimitiveBloons // INHERITANCE
 {
-    public override void Start()
+    public override void Start() // POLYMORPHISM
     {
         base.Start();
         speed = 2f;

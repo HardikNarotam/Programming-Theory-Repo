@@ -21,6 +21,7 @@ public class PathCreator : MonoBehaviour
     {
         line.positionCount = wayPoints.Length;
 
+        // ABSTRACTION
         for (int i = 0; i < wayPoints.Length; i++)
         {
             line.SetPosition(i, wayPoints[i].position);

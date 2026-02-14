@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class CircleBloon : PrimitiveBloons
+public class CircleBloon : PrimitiveBloons // INHERITANCE
 {
-    public override void Start()
+
+    public override void Start() // POLYMORPHISM
     {
         base.Start();
         speed = 3f;
