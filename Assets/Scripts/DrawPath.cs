@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class DrawPath : MonoBehaviour
 {
-
-    public GameObject[] points;
+    // Encapsulation
+    public Transform[] points;
     private LineRenderer lineRenderer;
 
     void Start()
@@ -27,7 +27,7 @@ public class DrawPath : MonoBehaviour
     {
         for (int i = 0; i < points.Length; i++)
         {
-            lineRenderer.SetPosition(i, points[i].transform.position);
+            lineRenderer.SetPosition(i, points[i].position);
         }
     }
 }
