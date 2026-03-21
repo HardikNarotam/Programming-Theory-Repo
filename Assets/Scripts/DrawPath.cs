@@ -15,8 +15,8 @@ public class DrawPath : MonoBehaviour
         lineRenderer.positionCount = points.Length;
 
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = Color.red;
-        lineRenderer.endColor = Color.red;
+        lineRenderer.startColor = Color.white;
+        lineRenderer.endColor = Color.white;
 
         lineRenderer.sortingOrder = 1;
 
