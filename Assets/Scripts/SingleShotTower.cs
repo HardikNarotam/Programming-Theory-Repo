@@ -8,7 +8,7 @@ public class SingleShotTower : Tower
         range = 3f;
         fireRate = 1f;
         damage = 1;
-        projectileSpeed = 5f;
+        projectileSpeed = 7f;
     }
 
     protected override void Shoot()

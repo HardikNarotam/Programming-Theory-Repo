@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7241129548315771415}
   - component: {fileID: 8047867834061896549}
   - component: {fileID: 5890174507226568795}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AOETower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5108805071978372856}
   - component: {fileID: 1490638915935812448}
   - component: {fileID: 3914502623390980233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SingleShotTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
