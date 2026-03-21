@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerManager : MonoBehaviour
 {
     public GameObject towerPrefab;
     private Tower currentTower;
+    public float maxX;
 
     void Update()
     {
@@ -14,7 +16,12 @@ public class TowerManager : MonoBehaviour
             currentTower.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
         }
 
-        if (Input.GetMouseButtonDown(0) && currentTower != null && !currentTower.isPlaced)
+        if (Input.GetMouseButtonDown(0)
+        && currentTower != null
+        && !currentTower.isPlaced
+        && EventSystem.current.IsPointerOverGameObject() == false
+        && currentTower.transform.position.x < maxX
+        && Physics2D.OverlapPoint(currentTower.transform.position, LayerMask.GetMask("Path")) == null)
         {
             currentTower.isPlaced = true;
             currentTower = null;
