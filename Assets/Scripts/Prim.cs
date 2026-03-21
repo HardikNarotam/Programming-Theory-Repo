@@ -4,18 +4,20 @@ using UnityEngine;
 public abstract class Prim : MonoBehaviour
 {
     // Encapsulation
-    public int health;
+    public int maxHealth;
     public float speed;
     public int damage;
     public GameObject shape;
 
     // Encapsulation: protected fields
+    protected int currentHealth;
     protected Transform[] pathPoints;
     protected int currentPathIndex = 0;
 
     // Polymorphism: virtual allows subclasses to override Awake()
     protected virtual void Awake()
     {
+        currentHealth = maxHealth;
         pathPoints = GameObject.FindFirstObjectByType<DrawPath>().points;
     }
 
@@ -30,4 +32,22 @@ public abstract class Prim : MonoBehaviour
             currentPathIndex = (currentPathIndex + 1) % pathPoints.Length;
         }
     }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            Pop();
+        }
+    }
+
+    protected virtual void Pop()
+    {
+        // Play pop animation or effects here
+        OnPop();
+        Destroy(gameObject);
+    }
+
+    protected virtual void OnPop() { } // Abstract method for subclasses to implement specific pop behavior
 }
