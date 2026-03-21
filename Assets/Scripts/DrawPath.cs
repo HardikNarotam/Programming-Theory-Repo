@@ -18,8 +18,7 @@ public class DrawPath : MonoBehaviour
         lineRenderer.startColor = Color.white;
         lineRenderer.endColor = Color.white;
 
-        lineRenderer.sortingOrder = 1;
-
+        lineRenderer.sortingOrder = -1;
         DrawLineThroughPoints();
     }
 
