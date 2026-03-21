@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class TowerManager : MonoBehaviour
 {
-    public GameObject towerPrefab;
     private Tower currentTower;
     public float maxX;
 
@@ -28,7 +27,7 @@ public class TowerManager : MonoBehaviour
         }
     }
 
-    public void SelectTower()
+    public void SelectTower(GameObject towerPrefab)
     {
         if (currentTower == null)
         {

@@ -40,4 +40,10 @@ public abstract class Tower : MonoBehaviour
     }
 
     protected abstract void Shoot();
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 }
