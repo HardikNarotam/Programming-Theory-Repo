@@ -13,6 +13,7 @@ public abstract class Prim : MonoBehaviour
     protected int currentHealth;
     protected Transform[] pathPoints;
     protected int currentPathIndex = 0;
+    private bool hasReachedEnd = false;
 
     // Polymorphism: virtual allows subclasses to override Awake()
     protected virtual void Awake()
@@ -30,7 +31,10 @@ public abstract class Prim : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
             if (currentPathIndex >= pathPoints.Length - 1)
+            {
+                hasReachedEnd = true;
                 Pop();
+            }
             else
                 currentPathIndex = (currentPathIndex + 1) % pathPoints.Length;
         }
@@ -49,6 +53,11 @@ public abstract class Prim : MonoBehaviour
     {
         // Play pop animation or effects here
         OnPop();
+        if (hasReachedEnd)
+        {
+            GameManager.Instance.TakeDamage(damage);
+        }
+        GameManager.Instance.CheckWinCondition();
         Destroy(gameObject);
     }
 
