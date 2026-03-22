@@ -1095,6 +1095,9 @@ MonoBehaviour:
   - redCount: 10
     blueCount: 5
     yellowCount: 7
+  - redCount: 20
+    blueCount: 10
+    yellowCount: 30
   redEnemyPrefab: {fileID: 4601164798345096417, guid: 4aced3db1b147084d9c94fba83c1ae9c, type: 3}
   yellowEnemyPrefab: {fileID: 7317076351007182091, guid: 68152dc91c9ce034b9c94aede23b3f0b, type: 3}
   blueEnemyPrefab: {fileID: 2516235975704599872, guid: 5f4e18065d1d9a74fb483c9b55a83acd, type: 3}
