@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject redEnemyPrefab, yellowEnemyPrefab, blueEnemyPrefab;
     public float spawnInterval = 1f;
     public Button startWaveButton;
-    private int currentWaveIndex = 0;
+    public int currentWaveIndex = 0;
 
     public void StartWave()
     {

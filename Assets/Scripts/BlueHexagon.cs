@@ -6,7 +6,7 @@ public class BlueHexagon : Prim
     {
         maxHealth = 3;
         speed = 1.5f;
-        damage = 1;
+        damage = 3;
         shape = GetComponentInChildren<SpriteRenderer>().gameObject;
 
         base.Awake();
