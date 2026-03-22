@@ -44,4 +44,13 @@ public class Projectile : MonoBehaviour
         }
 
     }
+
+    public void SetTargetPosition(Prim target, Vector3 position, Quaternion rotation, float range)
+    {
+        this.target = target;
+        Vector2 direction = (target.transform.position - position).normalized;
+        Vector2 rotatedDirection = rotation * direction;
+        Vector2 spreadTarget = (Vector2)transform.position + rotatedDirection * range;
+        targetPosition = spreadTarget;
+    }
 }
