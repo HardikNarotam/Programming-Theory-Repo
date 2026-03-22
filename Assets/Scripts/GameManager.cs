@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public int lives = 20;
     private bool isGameOver = false;
+    public Text livesText;
     public GameObject gameOverPanel;
     public GameObject winPanel;
     public EnemySpawner enemySpawner;
@@ -29,8 +31,10 @@ public class GameManager : MonoBehaviour
         lives -= amount;
         if (lives <= 0)
         {
+            lives = 0;
             GameOver();
         }
+        livesText.text = "Lives: " + lives;
     }
 
     public void CheckWinCondition()
