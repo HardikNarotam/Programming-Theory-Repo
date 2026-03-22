@@ -29,7 +29,10 @@ public abstract class Prim : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
-            currentPathIndex = (currentPathIndex + 1) % pathPoints.Length;
+            if (currentPathIndex >= pathPoints.Length - 1)
+                Pop();
+            else
+                currentPathIndex = (currentPathIndex + 1) % pathPoints.Length;
         }
     }
 
